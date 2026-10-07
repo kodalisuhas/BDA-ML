@@ -1,0 +1,42 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python Artifacts & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Data directories (Strictly exclude all local data from VCS)
+data/
+data/*
+*.parquet
+*.parquet/
+*.csv
+!data/.gitkeep
+
+# MLflow & Experiment Tracking Artifacts
+mlruns/
+mlartifacts/
+.mlflow/
+
+# Spark / Hadoop temporary outputs
+metastore_db/
+derby.log
+spark-warehouse/
+.checkpoint/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
