@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "system": "System A (Next-Hour Electricity Demand Forecasting)",
+    "milestone": "Phase 6.2 Baseline Evaluation",
+    "methodology": "Option C Path C1 (Strict Common Intersection)",
+    "feature_store_path": "C:\\Users\\kodal\\BDA-ML\\data\\processed\\features_forecasting",
+    "spark_version": "4.2.0",
+    "test_split_policy": "TEST metrics were not evaluated and TEST was not used for model selection (held out exclusively for Phase 6.6)",
+    "determinism_note": "Metrics under 'splits' are deterministic given the frozen dataset; 'run_diagnostics' captures run-specific environment execution details."
+  },
+  "run_diagnostics": {
+    "execution_timestamp": "2026-10-09T20:46:24+0530",
+    "total_runtime_seconds": 46.94
+  },
+  "splits": {
+    "TRAIN": {
+      "split": "TRAIN",
+      "cohort_audit": {
+        "eligible_instances": 618735,
+        "common_cohort_evaluated": 461294,
+        "excluded_instances": 157441,
+        "retention_pct": 74.5544,
+        "exclusion_pct": 25.4456,
+        "b2_valid_matches": 538556,
+        "b2_valid_match_pct": 87.0415,
+        "b3_valid_matches": 513032,
+        "b3_valid_match_pct": 82.9163,
+        "exclusion_breakdown": {
+          "missing_b2_only": 51738,
+          "missing_b2_only_pct": 8.3619,
+          "missing_b3_only": 77262,
+          "missing_b3_only_pct": 12.4871,
+          "missing_both_b2_and_b3": 28441,
+          "missing_both_pct": 4.5966
+        }
+      },
+      "target_summary": {
+        "count": 461294,
+        "sum_kwh": 178459.8067,
+        "mean_kwh": 0.386868,
+        "std_kwh": 0.459051,
+        "min_kwh": 0.0,
+        "max_kwh": 5.109
+      },
+      "baselines": {
+        "B1_naive_persistence": {
+          "evaluated_rows": 461294,
+          "rmse_kwh": 0.268586,
+          "mae_kwh": 0.12542,
+          "r2": 0.65767,
+          "wape_pct": 32.4193,
+          "nrmse_pct": 69.4257,
+          "sse": 33276.925347,
+          "sae": 57855.393739
+        },
+        "B2_diurnal_seasonal": {
+          "evaluated_rows": 461294,
+          "rmse_kwh": 0.302293,
+          "mae_kwh": 0.148173,
+          "r2": 0.566355,
+          "wape_pct": 38.3006,
+          "nrmse_pct": 78.1385,
+          "sse": 42153.432672,
+          "sae": 68351.108458
+        },
+        "B3_weekly_seasonal": {
+          "evaluated_rows": 461294,
+          "rmse_kwh": 0.350032,
+          "mae_kwh": 0.177051,
+          "r2": 0.418574,
+          "wape_pct": 45.7652,
+          "nrmse_pct": 90.4784,
+          "sse": 56518.766096,
+          "sae": 81672.558411
+        },
+        "B4_rolling_24h_mean": {
+          "evaluated_rows": 461294,
+          "rmse_kwh": 0.305518,
+          "mae_kwh": 0.172472,
+          "r2": 0.557052,
+          "wape_pct": 44.5817,
+          "nrmse_pct": 78.9721,
+          "sse": 43057.681769,
+          "sae": 79560.430284
+        }
+      }
+    },
+    "VAL": {
+      "split": "VAL",
+      "cohort_audit": {
+        "eligible_instances": 152833,
+        "common_cohort_evaluated": 111607,
+        "excluded_instances": 41226,
+        "retention_pct": 73.0255,
+        "exclusion_pct": 26.9745,
+        "b2_valid_matches": 129745,
+        "b2_valid_match_pct": 84.8933,
+        "b3_valid_matches": 124996,
+        "b3_valid_match_pct": 81.786,
+        "exclusion_breakdown": {
+          "missing_b2_only": 13389,
+          "missing_b2_only_pct": 8.7605,
+          "missing_b3_only": 18138,
+          "missing_b3_only_pct": 11.8679,
+          "missing_both_b2_and_b3": 9699,
+          "missing_both_pct": 6.3461
+        }
+      },
+      "target_summary": {
+        "count": 111607,
+        "sum_kwh": 36583.4484,
+        "mean_kwh": 0.327788,
+        "std_kwh": 0.397363,
+        "min_kwh": 0.0,
+        "max_kwh": 4.218
+      },
+      "baselines": {
+        "B1_naive_persistence": {
+          "evaluated_rows": 111607,
+          "rmse_kwh": 0.25935,
+          "mae_kwh": 0.119586,
+          "r2": 0.57401,
+          "wape_pct": 36.4828,
+          "nrmse_pct": 79.1211,
+          "sse": 7506.93132,
+          "sae": 13346.681746
+        },
+        "B2_diurnal_seasonal": {
+          "evaluated_rows": 111607,
+          "rmse_kwh": 0.27988,
+          "mae_kwh": 0.131942,
+          "r2": 0.503895,
+          "wape_pct": 40.2523,
+          "nrmse_pct": 85.3846,
+          "sse": 8742.518294,
+          "sae": 14725.663033
+        },
+        "B3_weekly_seasonal": {
+          "evaluated_rows": 111607,
+          "rmse_kwh": 0.322617,
+          "mae_kwh": 0.161151,
+          "r2": 0.34082,
+          "wape_pct": 49.1632,
+          "nrmse_pct": 98.4225,
+          "sse": 11616.274281,
+          "sae": 17985.600084
+        },
+        "B4_rolling_24h_mean": {
+          "evaluated_rows": 111607,
+          "rmse_kwh": 0.272734,
+          "mae_kwh": 0.153428,
+          "r2": 0.528905,
+          "wape_pct": 46.8071,
+          "nrmse_pct": 83.2045,
+          "sse": 8301.775202,
+          "sae": 17123.653723
+        }
+      }
+    }
+  }
+}
