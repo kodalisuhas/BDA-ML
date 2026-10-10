@@ -241,6 +241,6 @@ To prevent lookahead bias and temporal data leakage in time-series forecasting, 
 ---
 
 ## 👤 Author & Maintainer
-* **Author:** Suhas Kodali
+* **Author:** Suhas Kodali,T.Rohith,L.Neelesh,K.yashwanth
 * **Repository:** [https://github.com/kodalisuhas/BDA-ML](https://github.com/kodalisuhas/BDA-ML)
 
